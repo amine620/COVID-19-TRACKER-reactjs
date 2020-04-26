@@ -1,26 +1,33 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React,{ Component, useContext} from 'react';
+import Cards from './Components/Cards/Cards'
+import Charts from './Components/Charts/Charts'
+import CountryPicker from './Components/CountryPicker/CountryPicker'
+import {Api} from './Components/API'
+import 'bootstrap/dist/css/bootstrap.min.css'
+import './Components/App.module.css'
 
-function App() {
+
+class App extends Component{ 
+
+render() {
+  
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+<Api>
+    <div className="App container">
+      
+          <Cards/>
+
+        <CountryPicker/>    
+
+        <Charts/>
+  
+  
+
+ 
     </div>
+     </Api>
   );
+}
 }
 
 export default App;
